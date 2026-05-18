@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Struct AI — Documentation Infrastructure for Engineering Teams</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" id="hl-theme"/>
+<link rel="stylesheet" href="style.css"/>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+<div class="site-wrapper">
+
+<!-- ANNOUNCEMENT -->
+<a class="announce-bar" href="#" onclick="return false;">
+  <span class="announce-pill">New</span>
+  <span>Struct 2.0 ships with real-time CI sync and OpenAPI 3.1 export</span>
+  <span class="announce-arrow">→</span>
+</a>
+
+<!-- HEADER -->
+<header id="navbar">
+  <div class="header-inner">
+    <a href="#hero" class="logo">
+      <div class="logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>
+      </div>
+      Struct
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#workspace">Workspace</a>
+      <a href="#integrations">Integrations</a>
+      <a href="#exports">Exports</a>
+    </nav>
+    <div class="header-right">
+      <a href="https://github.com/ash1shkumar/struct" target="_blank" class="gh-btn">
+        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        GitHub
+      </a>
+      <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+        <svg class="icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="6"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="4.93" y1="4.93" x2="7.76" y2="7.76"/><line x1="16.24" y1="16.24" x2="19.07" y2="19.07"/><line x1="2" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="22" y2="12"/><line x1="4.93" y1="19.07" x2="7.76" y2="16.24"/><line x1="16.24" y1="7.76" x2="19.07" y2="4.93"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="header-cta" onclick="document.getElementById('workspace').scrollIntoView({behavior:'smooth'})">Get started free</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div id="hero" class="hero-section section-target">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Struct 2.0 is now available</div>
+    <h1>Documentation<br/><em>infrastructure</em><br/>for engineering teams</h1>
+    <p class="hero-sub">Struct parses your repository, extracts APIs, and generates production-ready architecture diagrams, READMEs, and API specs — automatically, on every push.</p>
+    <div class="hero-actions">
+      <button class="btn btn-primary" onclick="document.getElementById('workspace').scrollIntoView({behavior:'smooth'})">
+        Start for free
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <button class="btn btn-secondary" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">See how it works</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num">12k+</div><div class="hero-stat-label">Repositories</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">98%</div><div class="hero-stat-label">Accuracy rate</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">&lt;8s</div><div class="hero-stat-label">Generation time</div></div>
+    </div>
+    <div class="hero-preview-files">
+      <div class="preview-tab">README.md</div>
+      <div class="preview-tab">API.md</div>
+      <div class="preview-tab">ARCHITECTURE.md</div>
+      <div class="preview-tab">openapi.json</div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTALL -->
+<div class="install-string-container">
+  <div class="install-string">
+    <span class="prompt">$</span>
+    npm install struct-ai
+    <button class="copy-term" onclick="copyInstall()" id="copyBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section section-target" id="features">
+  <div class="section-label">Capabilities</div>
+  <h2>Everything your docs need.</h2>
+  <div class="features-split-new">
+    <div class="feat-blocks">
+      <div class="feat-block active" data-feat="0">
+        <span class="feat-block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+        <span class="feat-block-title">AST & semantic repository parsing</span>
+        <div class="feat-block-progress"></div>
+      </div>
+      <div class="feat-block" data-feat="1">
+        <span class="feat-block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></span>
+        <span class="feat-block-title">Automatic API endpoint extraction</span>
+        <div class="feat-block-progress"></div>
+      </div>
+      <div class="feat-block" data-feat="2">
+        <span class="feat-block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span>
+        <span class="feat-block-title">CI/CD & GitHub Actions sync</span>
+        <div class="feat-block-progress"></div>
+      </div>
+      <div class="feat-block" data-feat="3">
+        <span class="feat-block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg></span>
+        <span class="feat-block-title">Monorepo & microservice mapping</span>
+        <div class="feat-block-progress"></div>
+      </div>
+      <div class="feat-block" data-feat="4">
+        <span class="feat-block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
+        <span class="feat-block-title">Markdown, HTML & OpenAPI exports</span>
+        <div class="feat-block-progress"></div>
+      </div>
+      <div class="feat-block" data-feat="5">
+        <span class="feat-block-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+        <span class="feat-block-title">Async flow & edge-case detection</span>
+        <div class="feat-block-progress"></div>
+      </div>
+    </div>
+    <div class="feat-window">
+      <div class="window-bar">
+        <div class="window-dots">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="window-title" id="windowTitle">ast-parser.js</div>
+        <div style="width:52px;"></div>
+      </div>
+      <div class="window-body">
+        <div class="window-panel active" id="feat-panel-0">
+          <div class="code-line"><span class="c-comment">// Struct parsed 142 nodes across 38 files</span></div>
+          <div class="code-line"><span class="c-kw">import</span> <span class="c-fn">{ parseAST }</span> <span class="c-kw">from</span> <span class="c-str">'struct-ai'</span></div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="c-kw">const</span> tree = <span class="c-fn">parseAST</span>(sourceFiles, {</div>
+          <div class="code-line">&nbsp;&nbsp;semantic: <span class="c-val">true</span>,</div>
+          <div class="code-line">&nbsp;&nbsp;depth: <span class="c-str">'full'</span>,</div>
+          <div class="code-line">&nbsp;&nbsp;resolve: [<span class="c-str">'imports'</span>, <span class="c-str">'exports'</span>]</div>
+          <div class="code-line">})</div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="c-comment">// → 142 nodes · 38 files · 4 entry points</span></div>
+          <div class="window-badge">✦ 142 nodes detected</div>
+        </div>
+        <div class="window-panel" id="feat-panel-1">
+          <div class="code-line"><span class="c-comment">// Auto-extracted from Express router</span></div>
+          <div class="code-line"><span class="c-kw">GET</span>  &nbsp;<span class="c-str">/api/users</span>        <span class="c-muted">→ UserList</span></div>
+          <div class="code-line"><span class="c-kw">POST</span> &nbsp;<span class="c-str">/api/users</span>        <span class="c-muted">→ CreateUser</span></div>
+          <div class="code-line"><span class="c-kw">GET</span>  &nbsp;<span class="c-str">/api/users/:id</span>    <span class="c-muted">→ UserDetail</span></div>
+          <div class="code-line"><span class="c-kw">PATCH</span>&nbsp;<span class="c-str">/api/users/:id</span>    <span class="c-muted">→ UpdateUser</span></div>
+          <div class="code-line"><span class="c-kw">DELETE</span><span class="c-str">/api/users/:id</span>    <span class="c-muted">→ DeleteUser</span></div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="c-comment">// Params, types & responses generated</span></div>
+          <div class="window-badge">✦ 5 endpoints extracted</div>
+        </div>
+        <div class="window-panel" id="feat-panel-2">
+          <div class="code-line"><span class="c-comment"># .github/workflows/struct.yml</span></div>
+          <div class="code-line"><span class="c-kw">on</span>: [<span class="c-str">push</span>]</div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="c-kw">jobs</span>:</div>
+          <div class="code-line">&nbsp;&nbsp;<span class="c-fn">docs</span>:</div>
+          <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">runs-on</span>: <span class="c-str">ubuntu-latest</span></div>
+          <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-kw">steps</span>:</div>
+          <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <span class="c-fn">struct</span> generate --push</div>
+          <div class="window-badge">✦ Docs synced on every push</div>
+        </div>
+        <div class="window-panel" id="feat-panel-3">
+          <div class="code-line"><span class="c-comment">// Dependency graph — 3 services</span></div>
+          <div class="code-line"><span class="c-fn">api-gateway</span>  <span class="c-muted">──→</span>  <span class="c-fn">user-service</span></div>
+          <div class="code-line"><span class="c-fn">api-gateway</span>  <span class="c-muted">──→</span>  <span class="c-fn">order-service</span></div>
+          <div class="code-line"><span class="c-fn">order-service</span> <span class="c-muted">──→</span> <span class="c-fn">user-service</span></div>
+          <div class="code-line"><span class="c-fn">order-service</span> <span class="c-muted">──→</span> <span class="c-fn">payments</span></div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="c-comment">// Shared: postgres · redis · s3</span></div>
+          <div class="window-badge">✦ 4 services mapped</div>
+        </div>
+        <div class="window-panel" id="feat-panel-4">
+          <div class="code-line"><span class="c-comment">// Export targets</span></div>
+          <div class="code-line"><span class="c-fn">struct</span> export <span class="c-str">--format</span> md</div>
+          <div class="code-line"><span class="c-fn">struct</span> export <span class="c-str">--format</span> html</div>
+          <div class="code-line"><span class="c-fn">struct</span> export <span class="c-str">--format</span> openapi</div>
+          <div class="code-line"><span class="c-fn">struct</span> export <span class="c-str">--format</span> pdf</div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="c-comment">// → /docs ready for Docusaurus</span></div>
+          <div class="window-badge">✦ 4 formats exported</div>
+        </div>
+        <div class="window-panel" id="feat-panel-5">
+          <div class="code-line"><span class="c-comment">// Edge cases detected automatically</span></div>
+          <div class="code-line"><span class="c-kw">⚠</span>  <span class="c-str">unhandled Promise</span>  <span class="c-muted">auth.js:42</span></div>
+          <div class="code-line"><span class="c-kw">⚠</span>  <span class="c-str">missing catch</span>      <span class="c-muted">db.js:88</span></div>
+          <div class="code-line"><span class="c-kw">✓</span>  <span class="c-str">timeout fallback</span>   <span class="c-muted">api.js:14</span></div>
+          <div class="code-line"><span class="c-kw">✓</span>  <span class="c-str">retry logic</span>        <span class="c-muted">queue.js:6</span></div>
+          <div class="code-line"></div>
+          <div class="code-line"><span class="c-comment">// Documented in API.md automatically</span></div>
+          <div class="window-badge">✦ 2 issues flagged</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section how-section section-target" id="how">
+  <div class="section-label">Workflow</div>
+  <h2>Three steps to ship.</h2>
+  <p class="section-sub">Import any codebase, configure your output style, and get production-ready documentation in seconds.</p>
+  <div class="steps-row">
+    <div class="step-card">
+      <div class="step-number"><div class="step-dot">1</div></div>
+      <h3>Import your repository</h3>
+      <p>Point Struct at a GitHub URL, upload a ZIP, or paste code directly. Supports monorepos, private repos via CLI, and any language.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number"><div class="step-dot">2</div></div>
+      <h3>Set audience & style</h3>
+      <p>Choose Concise for a tight summary or Detailed for full depth. Struct adjusts structure, length, and coverage accordingly.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number"><div class="step-dot">3</div></div>
+      <h3>Export & integrate</h3>
+      <p>Download Markdown, HTML, PDF, or OpenAPI specs. Connect to GitHub Actions for automatic updates on every push.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WORKSPACE -->
+<div class="section workspace-section section-target" id="workspace" style="border-top:1px solid var(--border);">
+  <div class="section-label">Workspace</div>
+  <h2>Try it now.</h2>
+  <p class="section-sub">Paste code, upload a ZIP, or enter a public GitHub URL and generate documentation in seconds.</p>
+  <div class="app-container">
+    <div class="import-tabs">
+      <button class="import-tab active" data-target="pane-github">GitHub URL</button>
+      <button class="import-tab" data-target="pane-zip">ZIP Upload</button>
+      <button class="import-tab" data-target="pane-paste">Paste Code</button>
+    </div>
+    <div class="import-panes">
+      <div class="import-pane active" id="pane-github">
+        <input type="text" id="githubUrl" class="text-input" placeholder="https://github.com/username/repository"/>
+        <p class="pane-hint">Public repositories only. Private repo support available via CLI or GitHub App integration.</p>
+      </div>
+      <div class="import-pane" id="pane-zip">
+        <div class="drop-zone" id="dropZone">
+          <input type="file" id="zipUpload" accept=".zip" style="display:none;"/>
+          <label for="zipUpload" style="cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--fg-subtle)" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span id="fileNameDisplay" style="color:var(--fg-subtle);font-size:13px;font-weight:500;">Select or drop a .zip file</span>
+          </label>
+        </div>
+      </div>
+      <div class="import-pane" id="pane-paste">
+        <textarea id="rawCodeInput" class="text-input textarea-input" placeholder="// Paste a specific file, class, or module here for instant analysis..."></textarea>
+      </div>
+    </div>
+    <div class="app-controls">
+      <div class="style-row" id="styleRow">
+        <button class="opt-pill on" data-style="concise">Concise</button>
+        <button class="opt-pill" data-style="detailed">Detailed</button>
+      </div>
+      <button class="gen-btn" id="fullGenBtn" onclick="generateDocs()">Generate Documentation</button>
+    </div>
+    <div class="result-container" id="resultContainer" style="display:none;">
+      <div class="result-header">
+        <div class="result-filename">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          README.md
+        </div>
+        <div class="tab-actions">
+          <button class="tab-action-btn" onclick="copyOutput()" id="copyOutputBtn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+            Copy
+          </button>
+          <button class="tab-action-btn" onclick="downloadOutput()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download
+          </button>
+        </div>
+      </div>
+      <div class="out-body-container">
+        <div class="ai-loader" id="aiLoader">
+          <div class="spin"></div>
+          <div class="ai-loader-text" id="loaderText">Analyzing structure...</div>
+        </div>
+        <div class="out-body markdown-body" id="fullOut"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTEGRATIONS -->
+<div class="section integrations-section section-target" id="integrations">
+  <div class="section-label">Integrations</div>
+  <h2>Works where you work.</h2>
+  <p class="section-sub">Connect Struct to your existing toolchain in minutes. No custom scripts required.</p>
+  <div class="integrations-grid">
+    <div class="integration-item">
+      <div class="int-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></div>
+      <div><div class="int-name">GitHub</div><div class="int-cat">Source + CI</div></div>
+    </div>
+    <div class="integration-item">
+      <div class="int-icon"><svg width="20" height="20" viewBox="0 0 100 100" fill="none"><path d="M50 7.9L8.4 32.8v34.4L50 92.1l41.6-24.9V32.8L50 7.9z" fill="#5E6AD2"/><path d="M50 27.3L27.3 40.6v26.8L50 80.7l22.7-13.3V40.6L50 27.3z" fill="white"/></svg></div>
+      <div><div class="int-name">Linear</div><div class="int-cat">Issue tracking</div></div>
+    </div>
+    <div class="integration-item">
+      <div class="int-icon"><svg width="20" height="20" viewBox="0 0 76 65" fill="currentColor"><path d="M37.532 0L0 65h14.106L37.532 23.68 60.953 65H75.06L37.532 0z"/></svg></div>
+      <div><div class="int-name">Vercel</div><div class="int-cat">Deployment</div></div>
+    </div>
+    <div class="integration-item">
+      <div class="int-icon"><svg width="20" height="20" viewBox="0 0 512 512" fill="none"><circle cx="256" cy="256" r="256" fill="#25C2A0"/><path d="M128 176h256v32H128zm0 64h192v32H128zm0 64h128v32H128z" fill="white"/><circle cx="384" cy="320" r="56" fill="white"/><text x="384" y="330" text-anchor="middle" font-size="52" font-weight="bold" fill="#25C2A0">d</text></svg></div>
+      <div><div class="int-name">Docusaurus</div><div class="int-cat">Docs site</div></div>
+    </div>
+    <div class="integration-item">
+      <div class="int-icon"><svg width="20" height="20" viewBox="0 0 256 256" fill="none"><rect width="256" height="256" rx="12" fill="#85EA2D"/><path d="M47 176V80h48c26 0 42 13 42 34 0 22-16 35-42 35H71v27H47zm24-45h22c12 0 19-6 19-16s-7-16-19-16H71v32zM155 176V80h46c28 0 55 17 55 48s-27 48-55 48h-46zm24-18h20c18 0 31-11 31-30s-13-30-31-30h-20v60z" fill="white"/></svg></div>
+      <div><div class="int-name">Swagger</div><div class="int-cat">API explorer</div></div>
+    </div>
+    <div class="integration-item">
+      <div class="int-icon"><svg width="20" height="20" viewBox="0 0 2447.6 2452.5" fill="none"><path d="M897.4 0C762.8 0 658 104.8 658 239.4c0 131.1 100.4 237.5 233.6 237.5 131.1 0 235.9-106.4 235.9-237.5C1127.5 104.8 1028.5 0 897.4 0z" fill="#E01E5A"/><path d="M1549.8 0c-134.6 0-239.4 104.8-239.4 239.4 0 131.1 100.3 237.5 233.6 237.5 131.1 0 237.5-106.4 237.5-237.5C1781.5 104.8 1680.9 0 1549.8 0z" fill="#36C5F0"/><path d="M2.2 1104.2c0 131.1 100.4 237.5 233.6 237.5h237.5v-237.5c0-134.6-104.8-239.4-237.5-239.4C102.6 864.8 2.2 969.6 2.2 1104.2z" fill="#2EB67D"/><path d="M474.9 1756.6c0 134.6 104.8 239.4 237.5 239.4 134.6 0 239.4-104.8 239.4-239.4v-237.5H714.3c-131.1 0-239.4 100.4-239.4 237.5z" fill="#ECB22E"/><path d="M897.4 864.8c-131.1 0-237.5 104.8-237.5 237.5v652.4c0 131.1 106.4 237.5 237.5 237.5 134.6 0 239.4-106.4 239.4-237.5v-652.4c0-132.7-104.8-237.5-239.4-237.5z" fill="#E01E5A"/><path d="M864.8 2215c0 131.1 104.8 237.5 237.5 237.5 134.6 0 239.4-106.4 239.4-237.5v-237.5h-239.4c-132.7 0-237.5 100.4-237.5 237.5z" fill="#2EB67D"/><path d="M1549.8 864.8c-134.6 0-237.5 104.8-237.5 237.5v652.4c0 131.1 102.9 237.5 237.5 237.5 131.1 0 237.5-106.4 237.5-237.5v-652.4c0-132.7-106.4-237.5-237.5-237.5z" fill="#36C5F0"/><path d="M1972.5 1341.7h-237.5v237.5c0 134.6 104.8 239.4 239.4 239.4 131.1 0 237.5-104.8 237.5-239.4 0-131.1-106.4-237.5-239.4-237.5z" fill="#ECB22E"/><path d="M2210.1 864.8c-134.6 0-239.4 104.8-239.4 237.5 0 134.6 104.8 239.4 239.4 239.4 131.1 0 237.5-104.8 237.5-239.4 0-132.7-106.4-237.5-237.5-237.5z" fill="#2EB67D"/><path d="M1312.3 864.8h-237.5v652.4c0 131.1 106.4 237.5 237.5 237.5v-889.9z" fill="#ECB22E"/></svg></div>
+      <div><div class="int-name">Slack</div><div class="int-cat">Notifications</div></div>
+    </div>
+    <div class="integration-item">
+      <div class="int-icon"><svg width="20" height="20" viewBox="0 0 780 250" fill="currentColor"><path d="M240 0L0 130l240 130 240-130L240 0zM120 173V77l120 65v96l-120-65z"/><path d="M480 0v250h60V155l120 95V0h-60v95L480 0z" transform="translate(300 0) scale(0.42)"/></svg></div>
+      <div><div class="int-name">npm</div><div class="int-cat">Package registry</div></div>
+    </div>
+    <div class="integration-item">
+      <div class="int-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="int-name">Nx / Turbo</div><div class="int-cat">Monorepo tools</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPORTS -->
+<div class="section exports-section section-target" id="exports" style="border-top:1px solid var(--border);">
+  <div class="section-label">Delivery</div>
+  <h2>Export anywhere.</h2>
+  <p class="section-sub">Standard formats that plug directly into your documentation toolchain, deployment pipeline, or developer portal.</p>
+  <div class="formats-grid">
+    <div class="format-card"><div class="format-icon">📝</div><div class="format-tag">.md / .html</div><h3>Markdown & HTML</h3><p>Ready for Docusaurus, Nextra, or any static site generator.</p></div>
+    <div class="format-card"><div class="format-icon">📄</div><div class="format-tag">.pdf / .docx</div><h3>PDF & DOCX</h3><p>Compiled, styled exports for offline enterprise distribution.</p></div>
+    <div class="format-card"><div class="format-icon">🔌</div><div class="format-tag">openapi.json</div><h3>API Specs</h3><p>OpenAPI 3.1 — drop straight into Swagger UI or Redocly.</p></div>
+    <div class="format-card"><div class="format-icon">📊</div><div class="format-tag">.mmd</div><h3>Architecture</h3><p>Raw Mermaid.js syntax for dynamic, versionable diagrams.</p></div>
+  </div>
+</div>
+
+<!-- CTA BANNER -->
+<div class="cta-section">
+  <div class="cta-grid-bg"></div>
+  <h2>Ship docs. Not excuses.</h2>
+  <p>Join 12,000+ engineering teams who've made documentation a solved problem.</p>
+  <div class="cta-actions">
+    <button class="btn btn-primary" onclick="document.getElementById('workspace').scrollIntoView({behavior:'smooth'})">Start for free</button>
+    <button class="btn btn-secondary" onclick="document.getElementById('exports').scrollIntoView({behavior:'smooth'})">See exports</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand-col">
+    <div class="footer-logo">
+      <div class="footer-logo-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+          <line x1="12" y1="22.08" x2="12" y2="12"/>
+        </svg>
+      </div>
+      Struct
+    </div>
+    <div class="footer-tagline">Documentation infrastructure for engineering teams.</div>
+  </div>
+  <div class="footer-nav-cols">
+    <div class="footer-col">
+      <div class="footer-col-title">Product</div>
+      <div class="footer-col-links">
+        <a href="#features">Features</a>
+        <a href="#integrations">Integrations</a>
+        <a href="#exports">Exports</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Open Source</div>
+      <div class="footer-col-links">
+        <a href="https://github.com/ash1shkumar/struct" target="_blank">GitHub</a>
+        <a href="https://github.com/ash1shkumar" target="_blank">Created by Ashish</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span class="footer-bottom-text">© 2026 Struct AI</span>
+  <span class="footer-bottom-text">v2.0.0 · MIT License</span>
+</div>
+
+</div><!-- .site-wrapper -->
+<script src="script.js"></script>
+</body>
+</html>
